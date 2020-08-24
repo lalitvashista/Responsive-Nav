@@ -28,7 +28,8 @@ nav {
   text-decoration: none;
   color: rgb(15, 14, 14);
   display: inline-block;
-  padding: 16px 14px;
+  padding: 14px 14px;
+  letter-spacing: 1px;
 }
 
 .nav-links a:hover {
@@ -38,7 +39,7 @@ nav {
 .nav-links {
   display: flex;
   justify-content: space-around;
-  width: 300px;
+  width: 400px;
 }
 
 .burger {
@@ -51,6 +52,15 @@ nav {
   height: 2px;
   background-color: azure;
   margin: 5px;
+  transition: all 0.3s ease;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  background-image: url(./nelson-santos-jr-PuaIPFH3FHg-unsplash.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 @media (max-width: 640px) {
@@ -69,6 +79,7 @@ nav {
     width: 40%;
     background-color: #ff9100;
     transform: translateX(100%);
+    transition: transform 0.4s ease-in;
   }
 
   .nav-links li {
@@ -78,4 +89,29 @@ nav {
   .burger {
     display: block;
   }
+}
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-4px, -4px);
 }
